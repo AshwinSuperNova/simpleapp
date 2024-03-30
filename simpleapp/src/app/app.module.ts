@@ -11,7 +11,13 @@ import { HeaderComponent } from './components/header/header.component';
 import { TaskItemComponent } from './components/task-item/task-item.component';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { RouterModule,Routes } from '@angular/router';
 
+const appRoutes: Routes = [
+  { path: '', component: TasksComponent },
+  { path: 'about', component: AboutComponent }
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +33,9 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    RouterModule.forRoot(appRoutes, { enableTracing: true })
   ],
   providers: [],
   bootstrap: [AppComponent]
