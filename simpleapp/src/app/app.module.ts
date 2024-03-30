@@ -10,6 +10,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TaskItemComponent } from './components/task-item/task-item.component';
 import { TasksComponent } from './components/tasks/tasks.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { TasksComponent } from './components/tasks/tasks.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
