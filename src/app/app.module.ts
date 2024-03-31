@@ -13,6 +13,9 @@ import { TasksComponent } from './components/tasks/tasks.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule,Routes } from '@angular/router';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
+import { DatePipe } from '@angular/common';
 
 const appRoutes: Routes = [
   { path: '', component: TasksComponent },
@@ -35,9 +38,10 @@ const appRoutes: Routes = [
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes, { enableTracing: true })
+    RouterModule.forRoot(appRoutes, { enableTracing: true }),
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false })
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

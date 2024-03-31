@@ -17,7 +17,8 @@ export class TaskService {
  
    }
 
-  private apiUrl = 'http://localhost:5001/tasks';
+  // private apiUrl = 'http://localhost:5001/tasks';
+  private apiUrl = 'api/tasks';
   gettasks():Observable<Task[]>{
     
     return this.http.get<Task[]>(this.apiUrl);

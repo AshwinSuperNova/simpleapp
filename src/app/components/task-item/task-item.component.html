@@ -4,5 +4,5 @@
     [ngStyle]="{'color':'red'}"
      (click)="onDelete(Task)"></fa-icon>
 </h3>
-    <p>{{Task.day}}</p>
+    <p>{{Task.day  | date: 'fullDate'  }}</p>
 </div>
